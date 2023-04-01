@@ -10,7 +10,7 @@ from utils.twitterStatusUpdate import TwitterStatusUpdate
     default_args={
         "retries": 2, 
     },
-    tags=['twitter','status','update']) 
+    tags=['twitter','status','update'])
 def twitter_status_update():
     @task
     def kickOff():
@@ -30,4 +30,4 @@ def twitter_status_update():
     kickoff = kickOff()
     tweetText(kickoff)
     
-twitter_status_update_pipeline = twitter_status_update()
+twitter_status_update()
