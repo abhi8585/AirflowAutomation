@@ -27,7 +27,6 @@ def twitter_status_update():
         is_posted = ins.tweet_text(content)
         return is_posted
 
-    kickoff = kickOff()
-    tweetText(kickoff)
+    is_posted = tweetText(kickOff())
     
 twitter_status_update()
