@@ -1,0 +1,23 @@
+[2023-04-01T09:48:41.812+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: bq_test_pipeline.kickOff manual__2023-04-01T09:48:40.707392+00:00 [queued]>
+[2023-04-01T09:48:41.820+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: bq_test_pipeline.kickOff manual__2023-04-01T09:48:40.707392+00:00 [queued]>
+[2023-04-01T09:48:41.821+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T09:48:41.822+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-04-01T09:48:41.822+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T09:48:41.831+0000] {taskinstance.py:1300} INFO - Executing <Task(_PythonDecoratedOperator): kickOff> on 2023-04-01 09:48:40.707392+00:00
+[2023-04-01T09:48:41.836+0000] {standard_task_runner.py:55} INFO - Started process 136 to run task
+[2023-04-01T09:48:41.839+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_test_pipeline', 'kickOff', 'manual__2023-04-01T09:48:40.707392+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/bq_pipeline.py', '--cfg-path', '/tmp/tmpxbmd14dv']
+[2023-04-01T09:48:41.840+0000] {standard_task_runner.py:83} INFO - Job 87: Subtask kickOff
+[2023-04-01T09:48:41.887+0000] {task_command.py:388} INFO - Running <TaskInstance: bq_test_pipeline.kickOff manual__2023-04-01T09:48:40.707392+00:00 [running]> on host 21dcead862af
+[2023-04-01T09:48:41.929+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_test_pipeline
+AIRFLOW_CTX_TASK_ID=kickOff
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-01T09:48:40.707392+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-01T09:48:40.707392+00:00
+[2023-04-01T09:48:41.931+0000] {python.py:177} INFO - Done. Returned value was: 2023-04-01
+[2023-04-01T09:48:41.945+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=bq_test_pipeline, task_id=kickOff, execution_date=20230401T094840, start_date=20230401T094841, end_date=20230401T094841
+[2023-04-01T09:48:41.973+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-04-01T09:48:41.993+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

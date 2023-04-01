@@ -1,0 +1,25 @@
+[2023-04-01T09:45:03.867+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: bq_test_pipeline.updateStatus manual__2023-04-01T09:45:01.884547+00:00 [queued]>
+[2023-04-01T09:45:03.874+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: bq_test_pipeline.updateStatus manual__2023-04-01T09:45:01.884547+00:00 [queued]>
+[2023-04-01T09:45:03.874+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T09:45:03.875+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-04-01T09:45:03.876+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T09:45:03.885+0000] {taskinstance.py:1300} INFO - Executing <Task(_PythonDecoratedOperator): updateStatus> on 2023-04-01 09:45:01.884547+00:00
+[2023-04-01T09:45:03.890+0000] {standard_task_runner.py:55} INFO - Started process 165 to run task
+[2023-04-01T09:45:03.893+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'bq_test_pipeline', 'updateStatus', 'manual__2023-04-01T09:45:01.884547+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/bq_pipeline.py', '--cfg-path', '/tmp/tmplk14cejx']
+[2023-04-01T09:45:03.894+0000] {standard_task_runner.py:83} INFO - Job 84: Subtask updateStatus
+[2023-04-01T09:45:03.936+0000] {task_command.py:388} INFO - Running <TaskInstance: bq_test_pipeline.updateStatus manual__2023-04-01T09:45:01.884547+00:00 [running]> on host a061bee19956
+[2023-04-01T09:45:03.981+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bq_test_pipeline
+AIRFLOW_CTX_TASK_ID=updateStatus
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-01T09:45:01.884547+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-01T09:45:01.884547+00:00
+[2023-04-01T09:45:04.525+0000] {_default.py:649} WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+[2023-04-01T09:45:06.954+0000] {logging_mixin.py:137} INFO - 1 first tweet
+[2023-04-01T09:45:06.958+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-04-01T09:45:06.976+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=bq_test_pipeline, task_id=updateStatus, execution_date=20230401T094501, start_date=20230401T094503, end_date=20230401T094506
+[2023-04-01T09:45:07.051+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-04-01T09:45:07.081+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

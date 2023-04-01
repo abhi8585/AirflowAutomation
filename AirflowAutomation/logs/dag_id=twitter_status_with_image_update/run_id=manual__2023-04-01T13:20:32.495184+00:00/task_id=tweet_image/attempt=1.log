@@ -1,0 +1,100 @@
+[2023-04-01T13:20:42.093+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: twitter_status_with_image_update.tweet_image manual__2023-04-01T13:20:32.495184+00:00 [queued]>
+[2023-04-01T13:20:42.109+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: twitter_status_with_image_update.tweet_image manual__2023-04-01T13:20:32.495184+00:00 [queued]>
+[2023-04-01T13:20:42.111+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T13:20:42.112+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-04-01T13:20:42.113+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T13:20:42.128+0000] {taskinstance.py:1300} INFO - Executing <Task(_PythonDecoratedOperator): tweet_image> on 2023-04-01 13:20:32.495184+00:00
+[2023-04-01T13:20:42.136+0000] {standard_task_runner.py:55} INFO - Started process 12470 to run task
+[2023-04-01T13:20:42.140+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'twitter_status_with_image_update', 'tweet_image', 'manual__2023-04-01T13:20:32.495184+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/twitterImageWithTextUpdatePipeline.py', '--cfg-path', '/tmp/tmprkvxd2r9']
+[2023-04-01T13:20:42.142+0000] {standard_task_runner.py:83} INFO - Job 128: Subtask tweet_image
+[2023-04-01T13:20:42.204+0000] {task_command.py:388} INFO - Running <TaskInstance: twitter_status_with_image_update.tweet_image manual__2023-04-01T13:20:32.495184+00:00 [running]> on host 21dcead862af
+[2023-04-01T13:20:42.266+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=twitter_status_with_image_update
+AIRFLOW_CTX_TASK_ID=tweet_image
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-01T13:20:32.495184+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-01T13:20:32.495184+00:00
+[2023-04-01T13:20:54.482+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 175, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connection.py", line 187, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0xffff78d1f190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 499, in send
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.twitter.com', port=443): Max retries exceeded with url: /1.1/statuses/update.json?status=Great+scifi+author+or+greatest+scifi+author%3F+%23williamgibson&media_ids=1642155040692379648 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xffff78d1f190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/tweepy/api.py", line 225, in request
+    timeout=self.timeout, auth=auth, proxies=self.proxy
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.twitter.com', port=443): Max retries exceeded with url: /1.1/statuses/update.json?status=Great+scifi+author+or+greatest+scifi+author%3F+%23williamgibson&media_ids=1642155040692379648 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xffff78d1f190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 217, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/twitterImageWithTextUpdatePipeline.py", line 55, in tweet_image
+    is_posted = twitter_client.updateImageWithText(image_name)
+  File "/opt/airflow/dags/utils/twitterImageWithTextUpdate.py", line 30, in updateImageWithText
+    post_result = api.update_status(status=tweet, media_ids=[media.media_id])
+  File "/home/airflow/.local/lib/python3.7/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/tweepy/api.py", line 1149, in update_status
+    ), status=status, **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/tweepy/api.py", line 228, in request
+    raise TweepyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
+  File "/home/airflow/.local/lib/python3.7/site-packages/tweepy/api.py", line 225, in request
+    timeout=self.timeout, auth=auth, proxies=self.proxy
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+tweepy.errors.TweepyException: Failed to send request: HTTPSConnectionPool(host='api.twitter.com', port=443): Max retries exceeded with url: /1.1/statuses/update.json?status=Great+scifi+author+or+greatest+scifi+author%3F+%23williamgibson&media_ids=1642155040692379648 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xffff78d1f190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2023-04-01T13:20:54.549+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=twitter_status_with_image_update, task_id=tweet_image, execution_date=20230401T132032, start_date=20230401T132042, end_date=20230401T132054
+[2023-04-01T13:20:54.568+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 128 for task tweet_image (Failed to send request: HTTPSConnectionPool(host='api.twitter.com', port=443): Max retries exceeded with url: /1.1/statuses/update.json?status=Great+scifi+author+or+greatest+scifi+author%3F+%23williamgibson&media_ids=1642155040692379648 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0xffff78d1f190>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')); 12470)
+[2023-04-01T13:20:54.626+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-04-01T13:20:54.643+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

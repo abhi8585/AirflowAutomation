@@ -1,0 +1,23 @@
+[2023-04-01T13:06:49.048+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: twitter_status_with_image_update.kickOff manual__2023-04-01T13:06:48.075092+00:00 [queued]>
+[2023-04-01T13:06:49.056+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: twitter_status_with_image_update.kickOff manual__2023-04-01T13:06:48.075092+00:00 [queued]>
+[2023-04-01T13:06:49.057+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T13:06:49.058+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 3
+[2023-04-01T13:06:49.060+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-04-01T13:06:49.070+0000] {taskinstance.py:1300} INFO - Executing <Task(_PythonDecoratedOperator): kickOff> on 2023-04-01 13:06:48.075092+00:00
+[2023-04-01T13:06:49.076+0000] {standard_task_runner.py:55} INFO - Started process 11559 to run task
+[2023-04-01T13:06:49.079+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'twitter_status_with_image_update', 'kickOff', 'manual__2023-04-01T13:06:48.075092+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/twitterImageWithTextUpdatePipeline.py', '--cfg-path', '/tmp/tmpn_kkx1m0']
+[2023-04-01T13:06:49.081+0000] {standard_task_runner.py:83} INFO - Job 111: Subtask kickOff
+[2023-04-01T13:06:49.145+0000] {task_command.py:388} INFO - Running <TaskInstance: twitter_status_with_image_update.kickOff manual__2023-04-01T13:06:48.075092+00:00 [running]> on host 21dcead862af
+[2023-04-01T13:06:49.200+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=twitter_status_with_image_update
+AIRFLOW_CTX_TASK_ID=kickOff
+AIRFLOW_CTX_EXECUTION_DATE=2023-04-01T13:06:48.075092+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-04-01T13:06:48.075092+00:00
+[2023-04-01T13:06:49.203+0000] {python.py:177} INFO - Done. Returned value was: 2023-04-01
+[2023-04-01T13:06:49.223+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=twitter_status_with_image_update, task_id=kickOff, execution_date=20230401T130648, start_date=20230401T130649, end_date=20230401T130649
+[2023-04-01T13:06:49.252+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-04-01T13:06:49.274+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check
